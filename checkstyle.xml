@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.2//EN"
+        "http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
+<module name="Checker">
+    <module name="SuppressionCommentFilter">
+        <property name="offCommentFormat" value="CSOFF\: ([\w\|]+)"/>
+        <property name="onCommentFormat" value="CSON\: ([\w\|]+)"/>
+    </module>
+    <module name="SuppressWarningsFilter"/>
+    <module name="FileLength">
+        <property name="severity" value="warning"/>
+        <property name="max" value="2000"/>
+    </module>
+
+    <!-- forbid tab char -->
+    <module name="FileTabCharacter"/>
+
+
+    <module name="TreeWalker">
+
+        <!-- limit line length to 120 chars-->
+        <module name="LineLength">
+            <property name="severity" value="error"/>
+            <property name="tabWidth" value="4"/>
+            <!--<property name="ignorePattern" value="^([\s]+[*-\\]+.*){1,140}$"/>-->
+            <property name="max" value="120"/>
+        </module>
+
+        <!-- imports format -->
+        <module name="ImportOrder">
+            <property name="ordered" value="true"/>
+            <property name="separated" value="false"/>
+            <property name="option" value="under"/>
+            <property name="sortStaticImportsAlphabetically" value="true"/>
+        </module>
+        <module name="IllegalImport"/>
+        <module name="UnusedImports">
+            <property name="processJavadoc" value="false"/>
+        </module>
+
+        <!-- forbid empty catch -->
+        <module name="EmptyCatchBlockCheck">
+            <property name="severity" value="error"/>
+            <property name="commentFormat" value=".*"/>
+            <property name="exceptionVariableName" value="ignored"/>
+        </module>
+
+
+        <module name="FileContentsHolder"/>
+        <module name="SuppressWarningsHolder"/>
+        <module name="CommentsIndentation">
+            <property name="severity" value="info"/>
+            <property name="tokens" value="SINGLE_LINE_COMMENT,BLOCK_COMMENT_BEGIN"/>
+        </module>
+        <module name="ConstantName">
+            <property name="severity" value="error"/>
+            <property name="applyToPackage" value="true"/>
+            <property name="applyToPublic" value="true"/>
+            <property name="applyToProtected" value="true"/>
+            <property name="applyToPrivate" value="true"/>
+            <property name="format" value="^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$"/>
+        </module>
+        <module name="EmptyLineSeparator">
+            <property name="severity" value="error"/>
+            <property name="allowNoEmptyLineBetweenFields" value="true"/>
+            <property name="allowMultipleEmptyLines" value="true"/>
+            <property name="tokens" value="CLASS_DEF,INTERFACE_DEF,ENUM_DEF,STATIC_INIT,INSTANCE_INIT,METHOD_DEF"/>
+        </module>
+        <module name="IllegalCatch">
+            <property name="severity" value="warning"/>
+        </module>
+        <module name="InterfaceTypeParameterName">
+            <property name="severity" value="error"/>
+            <property name="format" value="^[A-Z][a-zA-Z0-9]*$"/>
+        </module>
+        <module name="MagicNumber">
+            <property name="severity" value="error"/>
+            <property name="tokens" value="NUM_DOUBLE,NUM_FLOAT,NUM_INT,NUM_LONG"/>
+            <property name="ignoreAnnotation" value="true"/>
+            <property name="ignoreHashCodeMethod" value="true"/>
+            <property name="ignoreFieldDeclaration" value="true"/>
+            <property name="ignoreNumbers" value="-1,-2,0,1,2"/>
+            <property name="constantWaiverParentToken"
+                      value="ASSIGN,ARRAY_INIT,EXPR,UNARY_PLUS,UNARY_MINUS,TYPECAST,ELIST,LITERAL_NEW,METHOD_CALL,STAR,DIV,PLUS,MINUS"/>
+        </module>
+        <module name="MemberName">
+            <property name="severity" value="error"/>
+            <property name="applyToPackage" value="true"/>
+            <property name="applyToPublic" value="true"/>
+            <property name="applyToProtected" value="true"/>
+            <property name="applyToPrivate" value="true"/>
+            <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+        </module>
+        <module name="MethodLength">
+            <property name="severity" value="warning"/>
+            <property name="tokens" value="METHOD_DEF,CTOR_DEF"/>
+            <property name="countEmpty" value="true"/>
+            <property name="max" value="150"/>
+        </module>
+        <module name="MethodName">
+            <property name="severity" value="error"/>
+            <property name="allowClassName" value="false"/>
+            <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+        </module>
+        <module name="MethodParamPad">
+            <property name="severity" value="error"/>
+            <property name="option" value="nospace"/>
+            <property name="allowLineBreaks" value="false"/>
+            <property name="tokens" value="CTOR_DEF,LITERAL_NEW,METHOD_CALL,METHOD_DEF,SUPER_CTOR_CALL"/>
+        </module>
+        <module name="NPathComplexity">
+            <property name="severity" value="info"/>
+            <property name="max" value="200"/>
+        </module>
+        <module name="NestedTryDepth">
+            <property name="severity" value="warning"/>
+            <property name="max" value="1"/>
+        </module>
+        <module name="NoClone">
+            <property name="severity" value="warning"/>
+        </module>
+        <module name="ParameterName">
+            <property name="severity" value="error"/>
+            <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+        </module>
+        <module name="ParenPad">
+            <property name="severity" value="error"/>
+            <property name="option" value="nospace"/>
+            <property name="tokens"
+                      value="ANNOTATION,ANNOTATION_FIELD_DEF,CTOR_CALL,CTOR_DEF,ENUM_CONSTANT_DEF,EXPR,LITERAL_CATCH,LITERAL_DO,LITERAL_FOR,LITERAL_IF,LITERAL_NEW,LITERAL_SWITCH,LITERAL_SYNCHRONIZED,LITERAL_WHILE,METHOD_CALL,METHOD_DEF,QUESTION,RESOURCE_SPECIFICATION,SUPER_CTOR_CALL"/>
+        </module>
+        <module name="WhitespaceAround">
+            <property name="severity" value="error"/>
+            <property name="tokens"
+                      value="LITERAL_RETURN,LITERAL_SWITCH,LITERAL_SYNCHRONIZED,LITERAL_TRY,LITERAL_WHILE,LOR,LT,LITERAL_CATCH,LITERAL_DO,LITERAL_ELSE,LITERAL_FINALLY,LITERAL_FOR,LITERAL_IF,ASSIGN,BAND,BAND_ASSIGN,BOR,BOR_ASSIGN,BSR,BSR_ASSIGN,BXOR,BXOR_ASSIGN,COLON,DIV,DIV_ASSIGN, DO_WHILE,EQUAL"/>
+            <property name="allowEmptyMethods" value="false"/>
+            <property name="allowEmptyConstructors" value="false"/>
+            <property name="ignoreEnhancedForColon" value="true"/>
+            <property name="allowEmptyLoops" value="false"/>
+            <property name="allowEmptyTypes" value="false"/>
+        </module>
+    </module>
+</module>
