@@ -5,10 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class ShimarovInternshipApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(ShimarovInternshipApplication.class, args);
-	}
+public static void main(String[] args) {
+SpringApplication.run(ShimarovInternshipApplication.class, args);
+}
 
 }
 
