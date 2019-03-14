@@ -1,0 +1,5 @@
+com\javachatV1\spring\ws\controller\ChatController.class
+com\javachatV1\spring\ws\model\ChatMessage.class
+com\javachatV1\spring\ws\SpringBootWebsocketApplication.class
+com\javachatV1\spring\ws\config\WsConfig.class
+com\javachatV1\spring\ws\model\ChatMessage$MessageType.class

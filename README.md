@@ -1,2 +1,2 @@
-# JavaChat
-Go to feature branch
+# Spring-Boot-WebSocket
+Building a chat application using Spring Boot and Web Socket
