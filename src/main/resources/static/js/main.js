@@ -48,6 +48,7 @@ function onError(error) {
     connectingElement.style.color = 'red';
 }
 
+
 function send(event) {
     var messageContent = messageInput.value.trim();
 
@@ -91,6 +92,7 @@ function onMessageReceived(payload) {
         messageElement.appendChild(usernameElement);
 
     }
+
     var textElement = document.createElement('span');
     var messageText = document.createTextNode(message.content);
     textElement.appendChild(messageText);
